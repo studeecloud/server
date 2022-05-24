@@ -22,8 +22,6 @@ app.use(bodyParser.json());
 //Accessing static sound file => acess URL in format: /public/[filename.mp3]
 app.use('/public', express.static(__dirname + '/public'));
 
-console.log(__dirname);
-
 // routes
 app.use('/video', videoRoutes());
 app.use('/messages', messagesRoutes(db));
