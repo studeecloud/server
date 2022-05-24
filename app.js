@@ -9,7 +9,6 @@ const bodyParser = require('body-parser');
 const db = require('./configs/db.config');
 
 // routes import
-const usersRoutes = require('./routes/users');
 const videoRoutes = require('./routes/video');
 const messagesRoutes = require('./routes/messages');
 
@@ -26,12 +25,11 @@ app.use('/public', express.static(__dirname + '/public'));
 console.log(__dirname);
 
 // routes
-app.use('/users', usersRoutes(db));
 app.use('/video', videoRoutes());
 app.use('/messages', messagesRoutes(db));
 
 app.get('/', (req, res) => {
-  res.json({ greetings: 'hello world' });
+  res.json({ greetings: 'Hello world! The server is responding :)' });
 });
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
