@@ -1,5 +1,6 @@
 const { Pool } = require('pg');
 const { DATABASE_URL } = process.env;
+// TODO -- update this to use DATABASE_URL the way it should be used - https://medium.com/nerd-for-tech/solving-cors-errors-associated-with-deploying-a-node-js-postgresql-api-to-heroku-1afd94964676
 const SPLIT_DATABASE_URL = DATABASE_URL.split(/(postgres:\/\/)|:|@|\//)
   .splice(2)
   .filter((x) => x !== undefined);
