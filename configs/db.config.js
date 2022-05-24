@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 console.log(process.env);
 // const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, PORT } = process.env;
 
-const pool = new Pool({ DATABASE_URL });
+const pool = new Pool(process.env.DATABASE_URL);
 
 pool
   .connect()
